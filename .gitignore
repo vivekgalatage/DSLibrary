@@ -15,4 +15,5 @@
 
 # Built executables
 *.exe
+*_test
 *.out
