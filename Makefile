@@ -1,5 +1,5 @@
 CC = gcc
-CXX = clang++
+CXX = g++
 
 all: List_test
 
