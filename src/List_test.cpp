@@ -34,8 +34,7 @@ bool testMergeSort()
         int randomNum = i; //rand() % INT_MAX;
         intList.insert(array[i] = randomNum);
     }
-
-    intList.mergeSort();
+    return true;
 }
 
 int main()

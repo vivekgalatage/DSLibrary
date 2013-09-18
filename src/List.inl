@@ -59,42 +59,6 @@ bool List<T>::clear()
 }
 
 template <typename T>
-bool List<T>::mergeSort()
-{
-    mergeSort(head_, tail_, size_);
-    return true;
-}
-
-template <typename T>
-bool List<T>::mergeSort(Node* start, Node* end, int size)
-{
-    if (size <= 1)
-        return true;
-
-    if (start == end)
-        return true;
-
-    if (!start)
-        return true;
-
-    if (!end)
-        return true;
-
-    int mid = size/2;
-    Node* middle = head_;
-    int i = mid;
-    while(i)
-        middle = middle->next_, i--;
-
-    printf("%d\n", middle->value_);
-
-
-    mergeSort(start, middle, mid);
-    mergeSort(middle->next_, end, size - mid);
-    return true;
-}
-
-template <typename T>
 T List<T>::operator [](int index) const
 {
     Node* temp = head_;

@@ -35,14 +35,9 @@ public:
     bool insert(const T& value);
     bool clear();
 
-    bool mergeSort();
-
     T operator[](int index) const;
 
     int size() const { return size_; }
-
-protected:
-    bool mergeSort(Node* start, Node* end, int size);
 
 protected:
     Node* head_;

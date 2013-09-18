@@ -1,10 +1,7 @@
 CC = gcc
-CXX = g++
+CXX = clang++
 
-all: List.o List_test
-
-List.o:
-	$(CXX) -g -c src/List.inl -o src/List.o
+all: List_test
 
 List_test:
 	$(CXX) -g -c src/List_test.cpp -o src/List_test.o
