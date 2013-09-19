@@ -17,3 +17,6 @@
 *.exe
 *_test
 *.out
+
+# Gyp generated folders
+out
