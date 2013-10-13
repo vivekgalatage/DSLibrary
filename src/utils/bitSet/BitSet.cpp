@@ -1,5 +1,7 @@
 #include"BitSet.h"
 
+using namespace ds::utils;
+
 BitSet::BitSet(int size)
 {
     m_sizeOfInt = sizeof(int);

@@ -1,6 +1,8 @@
 #ifndef BITSET_H
 #define BITSET_H
 
+namespace ds {
+namespace utils {
 class BitSet {
 public:
     BitSet(int);
@@ -12,5 +14,7 @@ private:
     int m_size;
     int m_array[];
     int m_sizeOfInt;
-};
+}; // BitSet
+}; // namespace utils
+}; // namespace ds
 #endif
