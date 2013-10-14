@@ -26,7 +26,8 @@
             "type": "<(build_mode)",
             "sources": [
                 "src/base/String.cpp",
-                "src/container/Vector.cpp"
+                "src/container/Vector.cpp",
+                "src/utils/bitSet/BitSet.cpp"
             ]
         },
         {
@@ -38,6 +39,7 @@
             "sources": [
                 "src/base/String_test.cpp",
                 "src/container/Vector_test.cpp",
+                "src/utils/bitSet/BitSet_test.cpp",
                 "src/testing/TestFramework.cpp",
                 "src/testing/UnitTestRunner.cpp"
             ],
