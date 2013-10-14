@@ -1,4 +1,4 @@
-#include "BitSet.h"
+#include "utils/BitSet.h"
 
 #include "testing/Test.h"
 #include "testing/TestFramework.h"

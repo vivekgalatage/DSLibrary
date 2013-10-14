@@ -1,11 +1,10 @@
-#include "String.h"
+#include "base/String.h"
 
 #include "testing/Test.h"
 #include "testing/TestFramework.h"
 
 #include <assert.h>
 
-using namespace ds::testing;
 using namespace ds::base;
 
 class StringLengthTest : public ds::testing::Test
