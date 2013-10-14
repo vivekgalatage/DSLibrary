@@ -41,7 +41,7 @@
                 "src/container/Vector_test.cpp",
                 "src/utils/bitSet/BitSet_test.cpp",
                 "src/testing/TestFramework.cpp",
-                "src/testing/UnitTestRunner.cpp",
+                "src/testing/UnitTestRunner.cpp"
             ],
             "include_dirs": [
                 "src"
