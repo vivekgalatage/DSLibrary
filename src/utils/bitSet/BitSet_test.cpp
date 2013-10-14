@@ -3,7 +3,7 @@
 #include "testing/Test.h"
 #include "testing/TestFramework.h"
 
-using namespace ds::utils
+using namespace ds::utils;
 
 class BitSetTest : public ds::testing::Test
 {

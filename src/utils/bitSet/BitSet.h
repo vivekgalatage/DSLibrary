@@ -5,11 +5,11 @@ namespace ds {
 namespace utils {
 class BitSet {
 public:
-    explicit BitSet(int);
-    bool test(int) const;
-    void set(const int);
-    void reset(const int);
-    bool operator[](const int) const;
+    explicit BitSet(int size);
+    bool test(int bitPosition) const;
+    void set(const int bitPosition);
+    void reset(const int bitPosition);
+    bool operator[](const int bitPosition) const;
 
 private:
     int m_size;
