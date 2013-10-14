@@ -1,39 +1,48 @@
 #include"BitSet.h"
 
-using namespace ds::utils;
+namespace ds {
+namespace utils {
 
 BitSet::BitSet(int size)
 {
-    m_sizeOfInt = sizeof(int);
-    m_size = size/m_sizeOfInt + 1;
+    m_size = size / sizeof(int) + 1;
     m_array[m_size];
 }
 
-int BitSet::valueAt(int pos) const
+bool BitSet::test(int bitPosition) const
 {
     int bucket = 0;
     int localPosition = 0;
-    bucket = pos/m_sizeOfInt;
-    localPosition = pos%m_sizeOfInt;	
-    int ans, temp;
+    bucket = bitPosition / sizeof(int);
+    localPosition = bitPosition % sizeof(int);	
+    int ans = 0, temp = 0;
     temp = m_array[bucket];
     ans = temp >> localPosition & 1;
     return ans;
 }
 
-void BitSet::setValueAt(const int pos, const int value)
+void BitSet::set(const int bitPosition)
 {
     int bucket = 0;
     int localPosition = 0;
-    bucket = pos/m_sizeOfInt;
-    localPosition = pos%m_sizeOfInt;
-    if (value)
-        m_array[bucket] = m_array[bucket] | (1 << localPosition);
-    else
-        m_array[bucket] = m_array[bucket] & ~(1 << localPosition);
+    bucket = bitPosition / sizeof(int);
+    localPosition = bitPosition % sizeof(int); 
+    m_array[bucket] = m_array[bucket] | (1 << localPosition);
 }
 
-int BitSet::operator[](const int pos) const
+void BitSet::reset(const int bitPosition)
 {
-    return valueAt(pos);
+    int bucket = 0;
+    int localPosition = 0;
+    bucket = bitPosition / sizeof(int);
+    localPosition = bitPosition % sizeof(int); 
+    m_array[bucket] = m_array[bucket] & ~(1 << localPosition);   
 }
+
+bool BitSet::operator[](const int bitPosition) const
+{
+    return test(bitPosition);
+}
+
+}; // namespace utils
+}; // namespace ds

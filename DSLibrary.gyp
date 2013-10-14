@@ -26,7 +26,8 @@
             "type": "<(build_mode)",
             "sources": [
                 "src/base/String.cpp",
-                "src/container/Vector.cpp"
+                "src/container/Vector.cpp",
+                "src/utils/bitSet/BitSet.cpp"
             ]
         },
         {
