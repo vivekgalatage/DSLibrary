@@ -3,23 +3,36 @@
 #include "testing/Test.h"
 #include "testing/TestFramework.h"
 
-using namespace ds::testing;
+#include <assert.h>
 
-class StringTest : public ds::testing::Test
+using namespace ds::testing;
+using namespace ds::base;
+
+class StringLengthTest : public ds::testing::Test
 {
 public:
     bool run();
     std::string description();
 };
 
-bool StringTest::run()
+bool StringLengthTest::run()
 {
+    String emptyString;
+    assert(emptyString.length() == 0);
+
+    String nonEmptyString("non-empty", 8);
+    assert(nonEmptyString.length() != 0);
+    assert(nonEmptyString.length() == 8);
+
+    String copyString(nonEmptyString);
+    assert(copyString.length() == nonEmptyString.length());
+    assert(copyString.length() != 0);
     return true;
 }
 
-std::string StringTest::description()
+std::string StringLengthTest::description()
 {
-    return "Unit Test: ds::base::String";
+    return "[Unit Test - String]: Various String::length() tests";
 }
 
-REGISTER_TEST(StringTest);
+REGISTER_TEST(StringLengthTest);

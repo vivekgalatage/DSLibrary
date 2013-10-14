@@ -5,14 +5,26 @@ namespace base {
 
 class StringPrivate {
 public:
-    StringPrivate() {}
-    StringPrivate(char*, int) {}
+    StringPrivate();
+    StringPrivate(char*, int);
 
 private:
     int m_length;
 
     friend class String;
 };
+
+StringPrivate::StringPrivate()
+    : m_length(0)
+{
+}
+
+StringPrivate::StringPrivate(char* data, int length)
+    : m_length(length)
+{
+
+}
+
 
 String::String()
     : m_pvt(0)

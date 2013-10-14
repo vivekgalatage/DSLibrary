@@ -20,17 +20,19 @@ public:
 bool UnitTestRunner::execute()
 {
     TestMap& map = TestFramework::instance().m_registry;
+    cout << "Running unit tests...\n";
 
     for (TestMap::iterator it = map.begin(); it != map.end(); ++it) {
         TestGenerator tg = (*it).second;
         if (tg) {
             Test* tc = (*tg)();
             if (tc) {
-                cout << tc->description() << endl;
+                bool result = tc->run();
+                cout << "\t" << tc->description() << ": " << (result ? "Passed" : "Failed") << endl;
             }
         }
     }
-
+    return true;
 }
 
 }; // namespace testing
