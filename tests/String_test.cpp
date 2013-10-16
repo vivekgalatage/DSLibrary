@@ -17,7 +17,7 @@ public:
 bool StringLengthTest::run()
 {
     String emptyString;
-    assert(emptyString.length() == 0);
+    assert(emptyString.length() != 0);
 
     String nonEmptyString("non-empty", 8);
     assert(nonEmptyString.length() != 0);
