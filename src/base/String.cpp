@@ -6,7 +6,7 @@ namespace base {
 class StringPrivate {
 public:
     StringPrivate();
-    StringPrivate(char*, int);
+    StringPrivate(const char*, int);
 
 private:
     int m_length;
@@ -19,7 +19,7 @@ StringPrivate::StringPrivate()
 {
 }
 
-StringPrivate::StringPrivate(char* data, int length)
+StringPrivate::StringPrivate(const char* data, int length)
     : m_length(length)
 {
 
@@ -32,7 +32,7 @@ String::String()
     m_pvt = new StringPrivate();
 }
 
-String::String(char* data, int length)
+String::String(const char* data, int length)
     : m_pvt(0)
 {
     m_pvt = new StringPrivate(data, length);
