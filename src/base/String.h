@@ -13,6 +13,7 @@ public:
     String(char* data, int length);
 
     int length() const;
+    bool empty() const;
 
     operator std::string();
 

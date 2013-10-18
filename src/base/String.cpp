@@ -43,6 +43,11 @@ int String::length() const
     return m_pvt->m_length;
 }
 
+bool String::empty() const
+{
+    return !(m_pvt->m_length);
+}
+
 String::operator std::string()
 {
     return std::string();

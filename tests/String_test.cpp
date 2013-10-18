@@ -18,6 +18,7 @@ bool StringLengthTest::run()
 {
     String emptyString;
     assert(emptyString.length() == 0);
+    assert(emptyString.empty());
 
     String nonEmptyString("non-empty", 8);
     assert(nonEmptyString.length() != 0);
@@ -26,12 +27,15 @@ bool StringLengthTest::run()
     String copyString(nonEmptyString);
     assert(copyString.length() == nonEmptyString.length());
     assert(copyString.length() != 0);
+
+    String copyEmptyString(emptyString);
+    assert(copyEmptyString.empty());
     return true;
 }
 
 std::string StringLengthTest::description()
 {
-    return "[Unit Test - String]: Various String::length() tests";
+    return "Unit Test: ds::base::String length and empty";
 }
 
 REGISTER_TEST(StringLengthTest);
