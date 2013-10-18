@@ -6,7 +6,7 @@ namespace utils {
 BitSet::BitSet(int size)
 {
     m_size = size / sizeof(int) + 1;
-    m_array[m_size];
+    m_array = new int[m_size];
 }
 
 bool BitSet::test(int bitPosition) const
