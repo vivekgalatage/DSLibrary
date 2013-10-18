@@ -5,8 +5,8 @@ namespace base {
 
 class StringPrivate {
 public:
-    StringPrivate() {}
-    StringPrivate(char*, int) {}
+    StringPrivate();
+    StringPrivate(const char*, int);
 
 private:
     int m_length;
@@ -14,13 +14,25 @@ private:
     friend class String;
 };
 
+StringPrivate::StringPrivate()
+    : m_length(0)
+{
+}
+
+StringPrivate::StringPrivate(const char* data, int length)
+    : m_length(length)
+{
+
+}
+
+
 String::String()
     : m_pvt(0)
 {
     m_pvt = new StringPrivate();
 }
 
-String::String(char* data, int length)
+String::String(const char* data, int length)
     : m_pvt(0)
 {
     m_pvt = new StringPrivate(data, length);
@@ -29,6 +41,11 @@ String::String(char* data, int length)
 int String::length() const
 {
     return m_pvt->m_length;
+}
+
+bool String::empty() const
+{
+    return !(m_pvt->m_length);
 }
 
 String::operator std::string()

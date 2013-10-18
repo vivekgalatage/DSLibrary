@@ -34,7 +34,7 @@ Test* testGenerator()
 }
 
 #define REGISTER_TEST(className) \
-    bool _id##className = TestFramework::addToRegistry(#className, testGenerator<className>)
+    bool _id##className = ds::testing::TestFramework::addToRegistry(#className, ds::testing::testGenerator<className>)
 
 }; // namespace testing
 }; // namespace ds

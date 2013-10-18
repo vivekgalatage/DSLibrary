@@ -37,11 +37,11 @@
                 "libds"
             ],
             "sources": [
-                "src/base/String_test.cpp",
-                "src/container/Vector_test.cpp",
-                "src/utils/BitSet_test.cpp",
                 "src/testing/TestFramework.cpp",
-                "src/testing/UnitTestRunner.cpp"
+                "src/testing/UnitTestRunner.cpp",
+                "tests/BitSet_test.cpp",
+                "tests/String_test.cpp",
+                "tests/Vector_test.cpp"
             ],
             "include_dirs": [
                 "src"

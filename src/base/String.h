@@ -10,9 +10,10 @@ class StringPrivate;
 class String {
 public:
     String();
-    String(char* data, int length);
+    String(const char* data, int length);
 
     int length() const;
+    bool empty() const;
 
     operator std::string();
 
