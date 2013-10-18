@@ -6,6 +6,7 @@ namespace utils {
 class BitSet {
 public:
     explicit BitSet(int size);
+    ~BitSet();
     bool test(int bitPosition) const;
     void set(const int bitPosition);
     void reset(const int bitPosition);
