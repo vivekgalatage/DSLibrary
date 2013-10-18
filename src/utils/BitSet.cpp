@@ -3,7 +3,8 @@
 namespace ds {
 namespace utils {
 
-BitSet::BitSet(int size) : m_array(0)
+BitSet::BitSet(int size) 
+    : m_array(0)
 {
     m_size = size / sizeof(int) + 1;
     m_array = new int[m_size];
@@ -11,7 +12,7 @@ BitSet::BitSet(int size) : m_array(0)
 
 BitSet::~BitSet()
 {
-    delete [] m_array;
+    delete[] m_array;
 }
 
 bool BitSet::test(int bitPosition) const
