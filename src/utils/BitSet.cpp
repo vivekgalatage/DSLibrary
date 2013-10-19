@@ -4,9 +4,10 @@ namespace ds {
 namespace utils {
 
 BitSet::BitSet(int size)
-    : m_array(0)
+    : m_size(size / sizeof(int))
 {
-    m_size = size / sizeof(int) + 1;
+    if (size % sizeof(int))
+        ++m_size;
     m_array = new int[m_size];
 }
 
