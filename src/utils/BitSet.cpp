@@ -3,12 +3,18 @@
 namespace ds {
 namespace utils {
 
-BitSet::BitSet(int size)
+BitSet::BitSet(int size, bool initialise)
     : m_size(size / sizeof(int))
 {
     if (size % sizeof(int))
         ++m_size;
     m_array = new int[m_size];
+    for (int i = 0; i < size; ++i) {
+        if (initialise)
+            set(i);
+        else
+            reset(i);
+    }
 }
 
 BitSet::~BitSet()
