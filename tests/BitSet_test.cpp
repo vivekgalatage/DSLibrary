@@ -2,6 +2,8 @@
 
 #include "testing/Test.h"
 #include "testing/TestFramework.h"
+#include <assert.h>
+#include <stdlib.h>
 
 using namespace ds::utils;
 
@@ -14,15 +16,14 @@ public:
 
 bool BitSetTest::run()
 {
-    BitSet bitset(3);
-    bitset.set(0);
-    bitset.reset(1);
-    bitset.set(2);
+    int size = random() % 63;
+    BitSet bitsetFalse(size);
+    assert(!bitsetFalse.test(random() % size));
 
-    if (bitset[0] && !bitset[1] && bitset[2])
-        return true;
-    else
-        return false;
+    BitSet bitsetTrue(size, true);
+    assert(bitsetTrue.test(random() % size));
+
+    return true;
 }
 
 std::string BitSetTest::description()

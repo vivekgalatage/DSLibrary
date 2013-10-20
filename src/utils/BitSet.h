@@ -5,7 +5,7 @@ namespace ds {
 namespace utils {
 class BitSet {
 public:
-    explicit BitSet(int size, bool initialise = false);
+    explicit BitSet(int size, bool setAllBits = false);
     ~BitSet();
     bool test(int bitPosition) const;
     void set(const int bitPosition);
@@ -14,7 +14,7 @@ public:
 
 private:
     int m_size;
-    int* m_array;
+    unsigned int* m_array;
 }; // BitSet
 }; // namespace utils
 }; // namespace ds
