@@ -9,9 +9,8 @@ BitSet::BitSet(int size, bool setAllBits)
     if (size % sizeof(int))
         ++m_size;
     m_array = new unsigned int[m_size];
-    for (int i = 0; i < m_size; ++i) {
+    for (int i = 0; i < m_size; ++i)
         m_array[i] = (setAllBits ? -1 : 0);
-    }
 }
 
 BitSet::~BitSet()

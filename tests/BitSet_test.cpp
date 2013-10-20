@@ -16,6 +16,12 @@ public:
 
 bool BitSetTest::run()
 {
+    BitSet bitset(3);
+    bitset.set(0);
+    bitset.reset(1);
+    bitset.set(2);
+    assert(bitset[0] && !bitset[1] && bitset[2]);
+
     int size = random() % 63;
     BitSet bitsetFalse(size);
     assert(!bitsetFalse.test(random() % size));
