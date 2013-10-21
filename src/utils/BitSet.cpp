@@ -44,5 +44,32 @@ bool BitSet::operator[](const int bitPosition) const
     return test(bitPosition);
 }
 
+bool BitSet::all() const 
+{
+    for (int i = 0; i < m_size; ++i) {
+        if (m_array[i] != -1)
+            return false;
+    }
+    return true;
+}
+
+bool BitSet::any() const 
+{
+    for (int i = 0; i < m_size; ++i) {
+        if (m_array[i] != 0)
+            return true;
+    }
+    return false;
+}
+
+bool BitSet::none() const 
+{
+    for (int i = 0; i < m_size; ++i) {
+        if (m_array[i] != 0)
+            return false;
+    }
+    return true;
+}
+
 }; // namespace utils
 }; // namespace ds

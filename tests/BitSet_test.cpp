@@ -12,9 +12,13 @@ class BitSetTest : public ds::testing::Test
 public:
     bool run();
     std::string description();
+    
+private:
+    bool setResetTest();
+    bool utilityFunctionsTest();
 };
 
-bool BitSetTest::run()
+bool BitSetTest::setResetTest()
 {
     BitSet bitset(3);
     bitset.set(0);
@@ -28,7 +32,32 @@ bool BitSetTest::run()
 
     BitSet bitsetTrue(size, true);
     assert(bitsetTrue.test(random() % size));
+    
+    return true;
+}
 
+bool BitSetTest::utilityFunctionsTest()
+{
+    BitSet bitSetTrue(4, true);
+    assert(bitSetTrue.all());
+    assert(!bitSetTrue.none());
+    
+    BitSet bitSetFalse(4);
+    assert(bitSetFalse.none());
+    assert(!bitSetFalse.any());
+    
+    BitSet bitSetOne(4);
+    assert(!bitSetOne.any());
+    bitSetOne.set(1);
+    assert(bitSetOne.any());
+    
+    return true;
+}
+
+bool BitSetTest::run()
+{
+    assert(setResetTest());
+    assert(utilityFunctionsTest());
     return true;
 }
 
