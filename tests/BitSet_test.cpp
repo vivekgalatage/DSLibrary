@@ -57,8 +57,8 @@ bool BitSetTest::utilityFunctionsTest()
 
 bool BitSetTest::run()
 {
-    setResetTest();
-    utilityFunctionsTest();
+    assert(setResetTest());
+    assert(utilityFunctionsTest());
     return true;
 }
 
