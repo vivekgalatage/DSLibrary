@@ -36,6 +36,7 @@ bool BitSetTest::setResetTest()
     return true;
 
 }
+
 bool BitSetTest::utilityFunctionsTest()
 {
     BitSet bitSetTrue(4, true);
@@ -53,6 +54,7 @@ bool BitSetTest::utilityFunctionsTest()
     
     return true;
 }
+
 bool BitSetTest::run()
 {
     setResetTest();
