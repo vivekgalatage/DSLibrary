@@ -11,9 +11,9 @@ public:
     void set(const int bitPosition);
     void reset(const int bitPosition);
     bool operator[](const int bitPosition) const;
-    bool all();
-    bool any();
-    bool none();
+    bool all() const;
+    bool any() const;
+    bool none() const;
 
 private:
     int m_size;
