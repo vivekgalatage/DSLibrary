@@ -47,7 +47,7 @@ bool BitSet::operator[](const int bitPosition) const
 bool BitSet::all() const 
 {
     for (int i = 0; i < m_size; ++i) {
-        if (m_array[i] != -1)
+        if (static_cast<int>(m_array[i]) != -1)
             return false;
     }
     return true;

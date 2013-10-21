@@ -41,6 +41,11 @@ bool BitSetTest::utilityFunctionsTest()
     BitSet bitSetTrue(4, true);
     assert(bitSetTrue.all());
     assert(!bitSetTrue.none());
+
+    bitSetTrue.reset(3);
+    assert(!bitSetTrue.all());
+    bitSetTrue.set(3);
+    assert(bitSetTrue.all());
     
     BitSet bitSetFalse(4);
     assert(bitSetFalse.none());
