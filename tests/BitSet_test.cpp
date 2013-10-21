@@ -56,6 +56,12 @@ bool BitSetTest::utilityFunctionsTest()
     bitSetOne.set(1);
     assert(bitSetOne.any());
     
+    BitSet bitFlip(4);
+    assert(!bitFlip[0]);
+    bitFlip.flip(0);
+    assert(bitFlip[0]);
+    bitFlip.flip(0);
+    assert(!bitFlip[0]);
     return true;
 }
 

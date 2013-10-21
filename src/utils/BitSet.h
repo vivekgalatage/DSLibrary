@@ -10,6 +10,7 @@ public:
     bool test(int bitPosition) const;
     void set(const int bitPosition);
     void reset(const int bitPosition);
+    void flip(const int bitPosition);
     bool operator[](const int bitPosition) const;
     bool all() const;
     bool any() const;
