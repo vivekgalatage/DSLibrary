@@ -34,7 +34,6 @@ bool BitSetTest::setResetTest()
     assert(bitsetTrue.test(random() % size));
     
     return true;
-
 }
 
 bool BitSetTest::utilityFunctionsTest()
