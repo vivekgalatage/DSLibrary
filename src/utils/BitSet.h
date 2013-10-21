@@ -15,7 +15,7 @@ public:
     bool all() const;
     bool any() const;
     bool none() const;
-    
+
 private:
     int m_size;
     unsigned int* m_array;
