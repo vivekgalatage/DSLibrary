@@ -48,8 +48,11 @@ bool BitSetTest::utilityFunctionsTest()
     
     BitSet bitSetOne(4);
     assert(!bitSetOne.any());
-    bitSetOne.set(1);
+    bitSetOne.set(0);
     assert(bitSetOne.any());
+    assert(bitSetOne[0]);
+    bitSetOne.flip(0);
+    assert(!bitSetOne[0]);
     
     return true;
 }
