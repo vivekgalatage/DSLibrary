@@ -29,21 +29,21 @@ void BitSet::set(const int bitPosition)
 {
     int bucket = bitPosition / sizeof(int);
     int localPosition = bitPosition % sizeof(int);
-    m_array[bucket] = m_array[bucket] | (1 << localPosition);
+    m_array[bucket] |= (1 << localPosition);
 }
 
 void BitSet::reset(const int bitPosition)
 {
     int bucket = bitPosition / sizeof(int);
     int localPosition = bitPosition % sizeof(int);
-    m_array[bucket] = m_array[bucket] & ~(1 << localPosition);
+    m_array[bucket] &= ~(1 << localPosition);
 }
 
 void BitSet::flip(const int bitPosition)
 {
     int bucket = bitPosition / sizeof(int);
     int localPosition = bitPosition % sizeof(int);
-    m_array[bucket] = m_array[bucket] ^ (1 << localPosition);
+    m_array[bucket] ^= (1 << localPosition);
 }
 
 bool BitSet::operator[](const int bitPosition) const
