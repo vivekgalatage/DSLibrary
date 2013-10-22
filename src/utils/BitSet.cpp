@@ -3,7 +3,7 @@
 namespace ds {
 namespace utils {
 
-BitSet::BitSet(int size, bool setAllBits)
+BitSet::BitSet(const int size, bool setAllBits)
     : m_size(size / sizeof(int))
 {
     if (size % sizeof(int))
@@ -18,7 +18,7 @@ BitSet::~BitSet()
     delete[] m_array;
 }
 
-bool BitSet::test(int bitPosition) const
+bool BitSet::test(const int bitPosition) const
 {
     int bucket = bitPosition / sizeof(int);
     int localPosition = bitPosition % sizeof(int);
