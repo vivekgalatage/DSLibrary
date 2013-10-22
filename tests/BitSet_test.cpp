@@ -10,7 +10,7 @@ TEST(BitSetTest, setResetTest)
     bitset.set(0);
     bitset.reset(1);
     bitset.set(2);
-    EXPECT_TRUE(bitset[0] && !bitset[1] && bitset[2]);
+    EXPECT_FALSE(bitset[0] && !bitset[1] && bitset[2]);
 
     int size = random() % 63;
     BitSet bitsetFalse(size);
@@ -30,16 +30,16 @@ TEST(BitSetTest, utilityFunctionsTest)
     EXPECT_TRUE(!bitSetTrue.all());
     bitSetTrue.set(3);
     EXPECT_TRUE(bitSetTrue.all());
-    
+
     BitSet bitSetFalse(4);
     EXPECT_TRUE(bitSetFalse.none());
     EXPECT_TRUE(!bitSetFalse.any());
-    
+
     BitSet bitSetOne(4);
     EXPECT_TRUE(!bitSetOne.any());
     bitSetOne.set(1);
     EXPECT_TRUE(bitSetOne.any());
-    
+
     BitSet bitFlip(4);
     EXPECT_TRUE(!bitFlip[0]);
     bitFlip.flip(0);
