@@ -1,41 +1,24 @@
 #include "base/String.h"
 
-#include "testing/Test.h"
-#include "testing/TestFramework.h"
+#include <gtest/gtest.h>
 
-#include <assert.h>
+using ds::base::String;
 
-using namespace ds::base;
-
-class StringLengthTest : public ds::testing::Test
-{
-public:
-    bool run();
-    std::string description();
-};
-
-bool StringLengthTest::run()
+TEST(StringTest, stringLengthTest)
 {
     String emptyString;
-    assert(emptyString.length() == 0);
-    assert(emptyString.empty());
+    EXPECT_TRUE(emptyString.length() == 0);
+    EXPECT_TRUE(emptyString.empty());
 
     String nonEmptyString("non-empty", 8);
-    assert(nonEmptyString.length() != 0);
-    assert(nonEmptyString.length() == 8);
+    EXPECT_TRUE(nonEmptyString.length() != 0);
+    EXPECT_TRUE(nonEmptyString.length() == 8);
 
     String copyString(nonEmptyString);
-    assert(copyString.length() == nonEmptyString.length());
-    assert(copyString.length() != 0);
+    EXPECT_TRUE(copyString.length() == nonEmptyString.length());
+    EXPECT_TRUE(copyString.length() != 0);
 
     String copyEmptyString(emptyString);
-    assert(copyEmptyString.empty());
-    return true;
+    EXPECT_TRUE(copyEmptyString.empty());
 }
 
-std::string StringLengthTest::description()
-{
-    return "Unit Test: ds::base::String length and empty";
-}
-
-REGISTER_TEST(StringLengthTest);

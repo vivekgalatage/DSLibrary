@@ -1,80 +1,50 @@
 #include "utils/BitSet.h"
-
-#include "testing/Test.h"
-#include "testing/TestFramework.h"
-#include <assert.h>
+#include <gtest/gtest.h>
 #include <stdlib.h>
 
-using namespace ds::utils;
+using ds::utils::BitSet;
 
-class BitSetTest : public ds::testing::Test
-{
-public:
-    bool run();
-    std::string description();
-    
-private:
-    bool setResetTest();
-    bool utilityFunctionsTest();
-};
-
-bool BitSetTest::setResetTest()
+TEST(BitSetTest, setResetTest)
 {
     BitSet bitset(3);
     bitset.set(0);
     bitset.reset(1);
     bitset.set(2);
-    assert(bitset[0] && !bitset[1] && bitset[2]);
+    EXPECT_TRUE(bitset[0] && !bitset[1] && bitset[2]);
 
     int size = random() % 63;
     BitSet bitsetFalse(size);
-    assert(!bitsetFalse.test(random() % size));
+    EXPECT_TRUE(!bitsetFalse.test(random() % size));
 
     BitSet bitsetTrue(size, true);
-    assert(bitsetTrue.test(random() % size));
-    
-    return true;
+    EXPECT_TRUE(bitsetTrue.test(random() % size));
 }
 
-bool BitSetTest::utilityFunctionsTest()
+TEST(BitSetTest, utilityFunctionsTest)
 {
     BitSet bitSetTrue(4, true);
-    assert(bitSetTrue.all());
-    assert(!bitSetTrue.none());
+    EXPECT_TRUE(bitSetTrue.all());
+    EXPECT_TRUE(!bitSetTrue.none());
 
     bitSetTrue.reset(3);
-    assert(!bitSetTrue.all());
+    EXPECT_TRUE(!bitSetTrue.all());
     bitSetTrue.set(3);
-    assert(bitSetTrue.all());
+    EXPECT_TRUE(bitSetTrue.all());
     
     BitSet bitSetFalse(4);
-    assert(bitSetFalse.none());
-    assert(!bitSetFalse.any());
+    EXPECT_TRUE(bitSetFalse.none());
+    EXPECT_TRUE(!bitSetFalse.any());
     
     BitSet bitSetOne(4);
-    assert(!bitSetOne.any());
+    EXPECT_TRUE(!bitSetOne.any());
     bitSetOne.set(1);
-    assert(bitSetOne.any());
+    EXPECT_TRUE(bitSetOne.any());
     
     BitSet bitFlip(4);
-    assert(!bitFlip[0]);
+    EXPECT_TRUE(!bitFlip[0]);
     bitFlip.flip(0);
-    assert(bitFlip[0]);
+    EXPECT_TRUE(bitFlip[0]);
     bitFlip.flip(0);
-    assert(!bitFlip[0]);
-    return true;
+    EXPECT_TRUE(!bitFlip[0]);
 }
 
-bool BitSetTest::run()
-{
-    assert(setResetTest());
-    assert(utilityFunctionsTest());
-    return true;
-}
-
-std::string BitSetTest::description()
-{
-    return "Unit Test: ds::utils::BitSet";
-}
-
-REGISTER_TEST(BitSetTest);

@@ -37,14 +37,18 @@
                 "libds"
             ],
             "sources": [
-                "src/testing/TestFramework.cpp",
-                "src/testing/UnitTestRunner.cpp",
+                "third-party/googletest/src/gtest-all.cc",
+                "third-party/googletest/src/gtest_main.cc",
                 "tests/BitSet_test.cpp",
-                "tests/String_test.cpp",
-                "tests/Vector_test.cpp"
+                "tests/String_test.cpp"
             ],
             "include_dirs": [
-                "src"
+                "src",
+                "third-party/googletest",
+                "third-party/googletest/include"
+            ],
+            "ldflags": [
+                "-pthread"
             ]
         }
     ]
