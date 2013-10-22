@@ -12,12 +12,12 @@ TEST(BitSetTest, setResetTest)
     bitset.set(2);
     EXPECT_TRUE(bitset[0] && !bitset[1] && bitset[2]);
 
-    int size = random() % 63;
+    int size = rand() % 63;
     BitSet bitsetFalse(size);
-    EXPECT_TRUE(!bitsetFalse.test(random() % size));
+    EXPECT_TRUE(!bitsetFalse.test(rand() % size));
 
     BitSet bitsetTrue(size, true);
-    EXPECT_TRUE(bitsetTrue.test(random() % size));
+    EXPECT_TRUE(bitsetTrue.test(rand() % size));
 }
 
 TEST(BitSetTest, utilityFunctionsTest)
