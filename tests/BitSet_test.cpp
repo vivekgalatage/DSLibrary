@@ -10,7 +10,7 @@ TEST(BitSetTest, setResetTest)
     bitset.set(0);
     bitset.reset(1);
     bitset.set(2);
-    EXPECT_FALSE(bitset[0] && !bitset[1] && bitset[2]);
+    EXPECT_TRUE(bitset[0] && !bitset[1] && bitset[2]);
 
     int size = random() % 63;
     BitSet bitsetFalse(size);
