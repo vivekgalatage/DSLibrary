@@ -1,4 +1,4 @@
 git submodule init
 git submodule update
-msbuild DSLibrary.sln
+msbuild %MSBuildLogger%\my-msbuild-log.xml DSLibrary.sln
 Debug\dslibrary.exe
