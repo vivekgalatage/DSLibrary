@@ -4,12 +4,13 @@ namespace ds {
 namespace utils {
 
 BitSet::BitSet(const int size, bool setAllBits)
-    : m_size(size / sizeof(int))
+    : m_size(size)
 {
-    if (size % sizeof(int))
-        ++m_size;
-    m_array = new unsigned int[m_size];
-    for (int i = 0; i < m_size; ++i)
+    unsigned arrayLength = m_size / sizeof(int);
+    if (m_size % sizeof(int))
+        ++arrayLength;
+    m_array = new unsigned int[arrayLength];
+    for (unsigned i = 0; i < arrayLength; ++i)
         m_array[i] = (setAllBits ? ~0 : 0);
 }
 
@@ -53,7 +54,10 @@ bool BitSet::operator[](const int bitPosition) const
 
 bool BitSet::all() const 
 {
-    for (int i = 0; i < m_size; ++i) {
+    unsigned arrayLength = m_size / sizeof(int);
+    if (m_size % sizeof(int))
+        ++arrayLength;
+    for (unsigned i = 0; i < arrayLength; ++i) {
         if (static_cast<int>(m_array[i]) != ~0)
             return false;
     }
@@ -62,7 +66,10 @@ bool BitSet::all() const
 
 bool BitSet::any() const 
 {
-    for (int i = 0; i < m_size; ++i) {
+    unsigned arrayLength = m_size / sizeof(int);
+    if (m_size % sizeof(int))
+        ++arrayLength;
+    for (unsigned i = 0; i < arrayLength; ++i) {
         if (m_array[i] != 0)
             return true;
     }
@@ -71,7 +78,10 @@ bool BitSet::any() const
 
 bool BitSet::none() const 
 {
-    for (int i = 0; i < m_size; ++i) {
+    unsigned arrayLength = m_size / sizeof(int);
+    if (m_size % sizeof(int))
+        ++arrayLength;
+    for (unsigned i = 0; i < arrayLength; ++i) {
         if (m_array[i] != 0)
             return false;
     }

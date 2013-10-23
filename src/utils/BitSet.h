@@ -19,8 +19,10 @@ public:
     bool any() const;
     bool none() const;
 
+    unsigned size() const { return m_size; }
+
 private:
-    int m_size;
+    unsigned m_size;
     unsigned int* m_array;
 }; // BitSet
 

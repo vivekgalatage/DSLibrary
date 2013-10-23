@@ -48,3 +48,12 @@ TEST(BitSetTest, utilityFunctionsTest)
     EXPECT_TRUE(!bitFlip[0]);
 }
 
+TEST(BitSetTest, sizeTest)
+{
+    BitSet b1(4);
+    BitSet b2(1);
+
+    EXPECT_TRUE(b1.size() == 4);
+    EXPECT_TRUE(b2.size() == 1);
+}
+
