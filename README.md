@@ -3,5 +3,8 @@ DSLibrary
 
 Data Structure Library
 
-Build status: 
-[![Build Status](https://drone.io/github.com/vivekgalatage/DSLibrary/status.png)](https://drone.io/github.com/vivekgalatage/DSLibrary/latest)
+
+Platform | build status 
+---|----------------------------------------------------------------------------------------------------------------------------------------------
+Ubuntu  | [![Build Status](https://drone.io/github.com/vivekgalatage/DSLibrary/status.png)](https://drone.io/github.com/vivekgalatage/DSLibrary/latest)
+Windows  | [![Build status](https://ci.appveyor.com/api/projects/status?id=juqwnlngswplsawd)](https://ci.appveyor.com/project/dslibrary)
