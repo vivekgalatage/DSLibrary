@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tests">
+      <UniqueIdentifier>{71685B5B-5DB1-D3F0-6DF4-FE19B5454C87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third-party">
+      <UniqueIdentifier>{3A161365-5391-FA1B-1B24-07B086783733}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third-party\googletest">
+      <UniqueIdentifier>{6EDDA1DE-C4B0-692A-E334-641598EC7D03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third-party\googletest\src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DSLibrary.gyp"/>
+    <ClCompile Include="tests\BitSet_test.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\String_test.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="third-party\googletest\src\gtest-all.cc">
+      <Filter>third-party\googletest\src</Filter>
+    </ClCompile>
+    <ClCompile Include="third-party\googletest\src\gtest_main.cc">
+      <Filter>third-party\googletest\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
