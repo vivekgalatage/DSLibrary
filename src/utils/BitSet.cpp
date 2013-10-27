@@ -1,4 +1,5 @@
 #include"BitSet.h"
+#include <assert.h>
 
 namespace ds {
 namespace utils {
@@ -6,6 +7,7 @@ namespace utils {
 BitSet::BitSet(const int size, bool setAllBits)
     : m_size(size)
 {
+    assert(size > 0);
     unsigned arrayLength = m_size / sizeof(int);
     if (m_size % sizeof(int))
         ++arrayLength;
@@ -21,6 +23,7 @@ BitSet::~BitSet()
 
 bool BitSet::test(const int bitPosition) const
 {
+    assert(bitPosition >= 0);
     int bucket = bitPosition / sizeof(int);
     int localPosition = bitPosition % sizeof(int);
     return (m_array[bucket] >> localPosition) & 1;
@@ -28,6 +31,7 @@ bool BitSet::test(const int bitPosition) const
 
 void BitSet::set(const int bitPosition)
 {
+    assert(bitPosition >= 0);
     int bucket = bitPosition / sizeof(int);
     int localPosition = bitPosition % sizeof(int);
     m_array[bucket] |= (1 << localPosition);
@@ -35,6 +39,7 @@ void BitSet::set(const int bitPosition)
 
 void BitSet::reset(const int bitPosition)
 {
+    assert(bitPosition >= 0);
     int bucket = bitPosition / sizeof(int);
     int localPosition = bitPosition % sizeof(int);
     m_array[bucket] &= ~(1 << localPosition);
@@ -42,6 +47,7 @@ void BitSet::reset(const int bitPosition)
 
 void BitSet::flip(const int bitPosition)
 {
+    assert(bitPosition >= 0);
     int bucket = bitPosition / sizeof(int);
     int localPosition = bitPosition % sizeof(int);
     m_array[bucket] ^= (1 << localPosition);
@@ -49,6 +55,7 @@ void BitSet::flip(const int bitPosition)
 
 bool BitSet::operator[](const int bitPosition) const
 {
+    assert(bitPosition >= 0);
     return test(bitPosition);
 }
 
