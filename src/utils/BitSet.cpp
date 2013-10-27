@@ -88,5 +88,15 @@ bool BitSet::none() const
     return true;
 }
 
+void BitSet::flipAll()
+{
+    unsigned arrayLength = m_size / sizeof(int);
+    if (m_size % sizeof(int))
+        ++arrayLength;
+    for (unsigned i = 0; i < arrayLength; ++i) {
+        m_array[i] ^= (~0);
+    }
+}
+
 }; // namespace utils
 }; // namespace ds
