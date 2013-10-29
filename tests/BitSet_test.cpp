@@ -46,6 +46,14 @@ TEST(BitSetTest, utilityFunctionsTest)
     EXPECT_TRUE(bitFlip[0]);
     bitFlip.flip(0);
     EXPECT_TRUE(!bitFlip[0]);
+
+    BitSet bitFlip2(4);
+    EXPECT_TRUE(bitFlip2.none());
+    bitFlip2.set(0);
+    bitFlip2.set(2);
+    EXPECT_TRUE(bitFlip2[0] && !bitFlip2[1] && bitFlip2[2] && !bitFlip2[3]);
+    bitFlip2.flipAll();
+    EXPECT_TRUE(!bitFlip2[0] && bitFlip2[1] && !bitFlip2[2] && bitFlip2[3]);
 }
 
 TEST(BitSetTest, sizeTest)
