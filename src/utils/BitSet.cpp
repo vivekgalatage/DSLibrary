@@ -82,11 +82,9 @@ bool BitSet::none() const
 
 void BitSet::flipAll()
 {
-    unsigned arrayLength = m_size / sizeof(int);
-    if (m_size % sizeof(int))
-        ++arrayLength;
+    unsigned arrayLength = (m_size / sizeof(int)) + ((m_size % sizeof(int)) ? 1 : 0);
     for (unsigned i = 0; i < arrayLength; ++i)
-        m_array[i] ^= (~0);
+        m_array[i] ^= static_cast<unsigned>(~0);
 }
 
 }; // namespace utils

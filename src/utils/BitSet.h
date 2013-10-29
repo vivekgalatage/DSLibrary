@@ -12,12 +12,13 @@ public:
     void set(const int bitPosition);
     void reset(const int bitPosition);
     void flip(const int bitPosition);
+    void flipAll();
+    
     bool test(const int bitPosition) const;
     bool operator[](const int bitPosition) const;
     bool all() const;
     bool any() const;
     bool none() const;
-    void flipAll();
 
     unsigned size() const { return m_size; }
 
