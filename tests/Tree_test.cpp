@@ -1,8 +1,8 @@
-#include "utils/tree.h"
+#include "container/Tree.h"
 #include <gtest/gtest.h>
 #include <stdlib.h>
 
-using ds::utils::Tree;
+using ds::container::Tree;
 
 TEST(TreeTest, childParentTest)
 {

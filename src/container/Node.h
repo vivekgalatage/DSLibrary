@@ -4,9 +4,9 @@
 #include <vector>
 
 namespace ds {
-namespace utils {
+namespace container {
 
-template <class T>
+template <typename T>
 class Node {
 public:
     Node();
@@ -28,4 +28,6 @@ private:
 
 }; // namespace utils
 }; // namespace ds
+
+#include "Node.inl";
 #endif // DS_UTILS_NODE_H

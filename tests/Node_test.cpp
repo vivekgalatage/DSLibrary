@@ -1,8 +1,8 @@
-#include "utils/node.h"
+#include "container/Node.h"
 #include <gtest/gtest.h>
 #include <stdlib.h>
 
-using ds::utils::Node;
+using ds::container::Node;
 
 TEST(NodeTest, childParentTest)
 {

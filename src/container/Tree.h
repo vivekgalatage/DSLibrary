@@ -1,12 +1,12 @@
 #ifndef DS_UTILS_TREE_H
 #define DS_UTILS_TREE_H
 
-#include "node.h"
+#include "Node.h"
 
 namespace ds {
-namespace utils {
+namespace container {
 
-template <class T>
+template <typename T>
 class Tree {
 public:
     Tree();
@@ -27,4 +27,6 @@ private:
 
 }; // namespace utils
 }; // namespace ds
+
+#include "Tree.inl"
 #endif // DS_UTILS_TREE_H
