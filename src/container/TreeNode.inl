@@ -5,7 +5,7 @@ template <typename T>
 TreeNode<T>::TreeNode() { };
 
 template <typename T>
-TreeNode<T>::TreeNode(T val)
+TreeNode<T>::TreeNode(const T& val)
 {
     m_value = val;
 }

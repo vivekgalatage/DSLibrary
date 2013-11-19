@@ -10,7 +10,7 @@ template <typename T>
 class TreeNode {
 public:
     TreeNode();
-    TreeNode(T val);
+    TreeNode(const T& val);
     void setParent(TreeNode* parent);
     void addChild(TreeNode* child);
     TreeNode* parent() const;
