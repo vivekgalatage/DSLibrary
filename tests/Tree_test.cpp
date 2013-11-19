@@ -14,12 +14,13 @@ TEST(TreeTest, childParentTest)
     tree.setRoot(node);
     EXPECT_TRUE(tree.root()->value() == 10);
 
-    tree.addChildToLeft(node1);
-    tree.addChildToLeft(node2);
-    EXPECT_TRUE(tree.root()->getChildAt(0)->value() == 200);
-    EXPECT_TRUE(tree.root()->getChildAt(1)->value() == 100);
+    tree.addChild(node1);
+    tree.addChild(node2);
+    EXPECT_TRUE(tree.root()->firstChild()->value() == 100);
+    EXPECT_TRUE(tree.root()->lastChild()->value() == 200);
     
     tree.setCurrentPosition(node2);
     EXPECT_TRUE(tree.currentPosition()->value() == 200);
     EXPECT_TRUE(tree.currentPosition()->parent()->value() == 10);
+    EXPECT_TRUE(tree.currentPosition()->previousSibling()->value() == 100);
 }
