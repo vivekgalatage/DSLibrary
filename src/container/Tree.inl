@@ -2,13 +2,15 @@ namespace ds {
 namespace container {
 
 template <typename T>
-Tree<T>::Tree() { };
+Tree<T>::Tree()
+    : m_root(0), m_currentPosition(0)
+{
+}
 
 template <typename T>
 Tree<T>::Tree(TreeNode<T>* root)
+    : m_root(root), m_currentPosition(root)
 {
-    m_root = root;
-    m_currentPosition = m_root;
 }
 
 template <typename T>

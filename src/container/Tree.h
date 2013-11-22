@@ -1,5 +1,5 @@
-#ifndef DS_UTILS_TREE_H
-#define DS_UTILS_TREE_H
+#ifndef DS_CONTAINER_TREE_H
+#define DS_CONTAINER_TREE_H
 
 #include "TreeNode.h"
 
@@ -10,7 +10,7 @@ template <typename T>
 class Tree {
 public:
     Tree();
-    Tree(TreeNode<T>* root);
+    explicit Tree(TreeNode<T>* root);
     void setRoot(TreeNode<T>* root);
     TreeNode<T>* root() const;
     void setCurrentPosition(TreeNode<T>* pos);
@@ -26,4 +26,4 @@ private:
 }; // namespace ds
 
 #include "Tree.inl"
-#endif // DS_UTILS_TREE_H
+#endif // DS_CONTAINER_TREE_H

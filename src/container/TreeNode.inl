@@ -2,12 +2,15 @@ namespace ds {
 namespace container {
 
 template <typename T>
-TreeNode<T>::TreeNode() { };
+TreeNode<T>::TreeNode()
+    : m_value(0)
+{
+}
 
 template <typename T>
 TreeNode<T>::TreeNode(const T& val)
+    : m_value(val)
 {
-    m_value = val;
 }
 
 template <typename T>
