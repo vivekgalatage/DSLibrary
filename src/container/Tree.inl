@@ -3,13 +3,15 @@ namespace container {
 
 template <typename T>
 Tree<T>::Tree()
-    : m_root(0), m_currentPosition(0)
+    : m_root(0)
+    , m_iterator(0)
 {
 }
 
 template <typename T>
 Tree<T>::Tree(TreeNode<T>* root)
-    : m_root(root), m_currentPosition(root)
+    : m_root(root)
+    , m_iterator(root)
 {
 }
 
@@ -17,7 +19,7 @@ template <typename T>
 void Tree<T>::setRoot(TreeNode<T>* root)
 {
     m_root = root;
-    m_currentPosition = m_root;
+    m_iterator = m_root;
 }
 
 template <typename T>
@@ -27,27 +29,27 @@ TreeNode<T>* Tree<T>::root() const
 }
 
 template <typename T>
-void Tree<T>::setCurrentPosition(TreeNode<T>* pos)
+void Tree<T>::setIterator(TreeNode<T>* pos)
 {
-    m_currentPosition = pos;
+    m_iterator = pos;
 }
 
 template <typename T>
-TreeNode<T>* Tree<T>::currentPosition() const
+TreeNode<T>* Tree<T>::iterator() const
 {
-    return m_currentPosition;
+    return m_iterator;
 }
 
 template <typename T>
-void Tree<T>::addChild(TreeNode<T>* child)
+void Tree<T>::appendChild(TreeNode<T>* child)
 {
-    m_currentPosition->addChild(child);
+    m_iterator->appendChild(child);
 }
 
 template <typename T>
 TreeNode<T>* Tree<T>::parent() const
 {
-    return m_currentPosition->parent();
+    return m_iterator->parent();
 }
 
 }; // namespace utils

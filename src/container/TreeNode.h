@@ -11,22 +11,17 @@ class TreeNode {
 public:
     TreeNode();
     explicit TreeNode(const T& val);
+    ~TreeNode();
     void setParent(TreeNode* parent);
-    void addChild(TreeNode* child);
+    void appendChild(TreeNode* child);
     TreeNode* parent() const;
     TreeNode* firstChild() const;
     TreeNode* lastChild() const;
-    void setNextSibling(TreeNode* next);
-    void setPreviousSibling(TreeNode* previous);
-    TreeNode* nextSibling() const;
-    TreeNode* previousSibling() const;
     T value() const;
     int children() const;
 
 private:
     T m_value;
-    TreeNode* m_nextSibling;
-    TreeNode* m_previousSibling;
     TreeNode* m_parent;
     std::vector<TreeNode*> m_children;
 };
