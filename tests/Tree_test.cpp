@@ -1,6 +1,5 @@
 #include "container/Tree.h"
 #include <gtest/gtest.h>
-#include <stdlib.h>
 
 using ds::container::Tree;
 
