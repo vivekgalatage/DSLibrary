@@ -13,13 +13,8 @@ public:
     explicit Tree(TreeNode<T>* root);
     void setRoot(TreeNode<T>* root);
     TreeNode<T>* root() const;
-    void setIterator(TreeNode<T>* pos);
-    TreeNode<T>* iterator() const;
-    void appendChild(TreeNode<T>* child);
-    TreeNode<T>* parent() const;
 private:
     TreeNode<T>* m_root;
-    TreeNode<T>* m_iterator;
 };
 
 }; // namespace utils

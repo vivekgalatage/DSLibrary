@@ -3,22 +3,14 @@ namespace container {
 
 template <typename T>
 TreeNode<T>::TreeNode()
-    : m_value(0)
+    : Node<T>(Node<T>::TreeNode)
 {
 }
 
 template <typename T>
 TreeNode<T>::TreeNode(const T& val)
-    : m_value(val)
+    : Node<T>(val, Node<T>::TreeNode)
 {
-}
-
-template <typename T>
-TreeNode<T>::~TreeNode()
-{
-    delete m_value;
-    delete m_parent;
-    delete m_children;
 }
 
 template <typename T>
@@ -30,6 +22,10 @@ void TreeNode<T>::setParent(TreeNode* parent)
 template <typename T>
 void TreeNode<T>::appendChild(TreeNode* child)
 {
+    if (m_children.size()) {
+        child->Node<T>::m_previous = static_cast<Node<T>*>(m_children.back());
+        m_children.back()->Node<T>::m_next = static_cast<Node<T>*>(child);
+    }
     m_children.push_back(child);
     child->setParent(this);
 }
@@ -59,9 +55,23 @@ TreeNode<T>* TreeNode<T>::lastChild() const
 }
 
 template <typename T>
+TreeNode<T>* TreeNode<T>::nextSibling() const
+{
+    //return m_nextSibling;
+    return static_cast<TreeNode<T>*>(Node<T>::m_next);
+}
+
+template <typename T>
+TreeNode<T>* TreeNode<T>::previousSibling() const
+{
+    //return m_previousSibling;
+    return static_cast<TreeNode<T>*>(Node<T>::m_previous);
+}
+
+template <typename T>
 T TreeNode<T>::value() const
 {
-    return m_value;
+    return Node<T>::m_value;
 }
 
 template <typename T>
