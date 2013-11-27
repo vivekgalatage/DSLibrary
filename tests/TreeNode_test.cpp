@@ -3,15 +3,17 @@
 
 using ds::container::TreeNode;
 
+typedef TreeNode<int> IntTreeNode;
+
 TEST(TreeNodeTest, childParentTest)
 {
-    TreeNode<int> node(10);
-    TreeNode<int> node1(100);
-    TreeNode<int> node2(200);
-    TreeNode<int> node3(300);
-    TreeNode<int> node4(400);
-    TreeNode<int> node5(500);
-    TreeNode<int> node6(600);
+    IntTreeNode node(10);
+    IntTreeNode node1(100);
+    IntTreeNode node2(200);
+    IntTreeNode node3(300);
+    IntTreeNode node4(400);
+    IntTreeNode node5(500);
+    IntTreeNode node6(600);
     node.appendChild(&node1);
     node.appendChild(&node2);
     node2.appendChild(&node3);

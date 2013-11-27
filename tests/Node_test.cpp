@@ -3,11 +3,15 @@
 
 using ds::container::Node;
 
-TEST(NodeTest, childParentTest)
+typedef Node<int> IntNode;
+
+TEST(NodeTest, valueTypeTest)
 {
-    Node<int> node(10);
-    Node<int> node1(100, Node<int>::TreeNode);
+    IntNode node(10);
+    IntNode node1(100, IntNode::TreeNode);
 
     EXPECT_TRUE(node.value() == 10);
+    EXPECT_TRUE(node.type() == IntNode::InvalidNode);
     EXPECT_TRUE(node1.value() == 100);
+    EXPECT_TRUE(node1.value() == IntNode::TreeNode);
 }

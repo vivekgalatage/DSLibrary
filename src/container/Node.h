@@ -8,19 +8,20 @@ template <typename T>
 class Node {
 public:
     enum Type {
-        InvalidNode = -1
-        , TreeNode
-        , ListNode
+        InvalidNode = -1,
+        TreeNode,
+        ListNode
     };
 
     Node();
-    explicit Node(Type type);
-    explicit Node(T val);
-    explicit Node(T val, Type type);
+    explicit Node(const Type& type);
+    explicit Node(const T& val);
+    Node(const T& val, const Type& type);
     void setValue(const T& val);
     T value() const;
     Node* next() const;
     Node* previous() const;
+    Type type() const;
 protected:
     T m_value;
     Node* m_next;

@@ -3,10 +3,12 @@
 
 using ds::container::Tree;
 
+typedef TreeNode<int> IntTreeNode;
+
 TEST(TreeTest, childParentTest)
 {
-    TreeNode<int> node(10);
-    TreeNode<int> node1(100);
+    IntTreeNode node(10);
+    IntTreeNode node1(100);
     Tree<int> tree;
     node.appendChild(&node1);
     

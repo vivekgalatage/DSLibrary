@@ -57,14 +57,12 @@ TreeNode<T>* TreeNode<T>::lastChild() const
 template <typename T>
 TreeNode<T>* TreeNode<T>::nextSibling() const
 {
-    //return m_nextSibling;
     return static_cast<TreeNode<T>*>(Node<T>::m_next);
 }
 
 template <typename T>
 TreeNode<T>* TreeNode<T>::previousSibling() const
 {
-    //return m_previousSibling;
     return static_cast<TreeNode<T>*>(Node<T>::m_previous);
 }
 
