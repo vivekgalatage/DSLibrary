@@ -3,7 +3,7 @@
 
 using ds::container::TreeNode;
 
-typedef TreeNode<int> IntTreeNode;
+typedef ds::container::TreeNode<int> IntTreeNode;
 
 TEST(TreeNodeTest, childParentTest)
 {
