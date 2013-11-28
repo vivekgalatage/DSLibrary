@@ -41,7 +41,8 @@
                 "third-party/googletest/src/gtest_main.cc",
                 "tests/BitSet_test.cpp",
                 "tests/String_test.cpp",
-                "tests/Tree_test.cpp"
+                "tests/Tree_test.cpp",
+                "tests/TreeNode_test.cpp"
             ],
             "include_dirs": [
                 "src",
