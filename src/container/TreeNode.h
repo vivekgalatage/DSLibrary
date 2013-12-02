@@ -23,8 +23,8 @@ public:
     int children() const;
 
 private:
-    TreeNode* m_parent;
-    std::vector<TreeNode*> m_children;
+    TreeNode* parent_;
+    std::vector<TreeNode*> children_;
 };
 
 }; // namespace container

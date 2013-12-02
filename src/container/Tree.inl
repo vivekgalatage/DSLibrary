@@ -3,26 +3,26 @@ namespace container {
 
 template <typename T>
 Tree<T>::Tree()
-    : m_root(0)
+    : root_(0)
 {
 }
 
 template <typename T>
 Tree<T>::Tree(TreeNode<T>* root)
-    : m_root(root)
+    : root_(root)
 {
 }
 
 template <typename T>
 void Tree<T>::setRoot(TreeNode<T>* root)
 {
-    m_root = root;
+    root_ = root;
 }
 
 template <typename T>
 TreeNode<T>* Tree<T>::root() const
 {
-    return m_root;
+    return root_;
 }
 
 }; // namespace utils

@@ -2,8 +2,9 @@
 #include <gtest/gtest.h>
 
 using ds::container::Tree;
+using ds::container::TreeNode;
 
-typedef ds::container::TreeNode<int> IntTreeNode;
+typedef TreeNode<int> IntTreeNode;
 
 TEST(TreeTest, childParentTest)
 {

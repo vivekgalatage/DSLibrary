@@ -9,43 +9,43 @@ public:
     StringPrivate(const char*, int);
 
 private:
-    int m_length;
+    int length_;
 
     friend class String;
 };
 
 StringPrivate::StringPrivate()
-    : m_length(0)
+    : length_(0)
 {
 }
 
 StringPrivate::StringPrivate(const char* data, int length)
-    : m_length(length)
+    : length_(length)
 {
 
 }
 
 
 String::String()
-    : m_pvt(0)
+    : pvt_(0)
 {
-    m_pvt = new StringPrivate();
+    pvt_ = new StringPrivate();
 }
 
 String::String(const char* data, int length)
-    : m_pvt(0)
+    : pvt_(0)
 {
-    m_pvt = new StringPrivate(data, length);
+    pvt_ = new StringPrivate(data, length);
 }
 
 int String::length() const
 {
-    return m_pvt->m_length;
+    return pvt_->length_;
 }
 
 bool String::empty() const
 {
-    return !(m_pvt->m_length);
+    return !(pvt_->length_);
 }
 
 String::operator std::string()

@@ -14,7 +14,7 @@ public:
     void setRoot(TreeNode<T>* root);
     TreeNode<T>* root() const;
 private:
-    TreeNode<T>* m_root;
+    TreeNode<T>* root_;
 };
 
 }; // namespace utils

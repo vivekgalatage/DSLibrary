@@ -18,7 +18,7 @@ public:
     operator std::string();
 
 private:
-    StringPrivate* m_pvt;
+    StringPrivate* pvt_;
 }; // class String
 }; // namespace base
 }; // namespace ds

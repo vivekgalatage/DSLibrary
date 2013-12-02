@@ -16,31 +16,31 @@ TreeNode<T>::TreeNode(const T& val)
 template <typename T>
 void TreeNode<T>::setParent(TreeNode* parent)
 {
-    m_parent = parent;
+    parent_ = parent;
 }
 
 template <typename T>
 void TreeNode<T>::appendChild(TreeNode* child)
 {
-    if (m_children.size()) {
-        child->Node<T>::m_previous = static_cast<Node<T>*>(m_children.back());
-        m_children.back()->Node<T>::m_next = static_cast<Node<T>*>(child);
+    if (children_.size()) {
+        child->Node<T>::previous_ = static_cast<Node<T>*>(children_.back());
+        children_.back()->Node<T>::next_ = static_cast<Node<T>*>(child);
     }
-    m_children.push_back(child);
+    children_.push_back(child);
     child->setParent(this);
 }
 
 template <typename T>
 TreeNode<T>* TreeNode<T>::parent() const
 {
-    return m_parent;
+    return parent_;
 }
 
 template <typename T>
 TreeNode<T>* TreeNode<T>::firstChild() const
 {
-    if (m_children.size())
-        return m_children.front();
+    if (children_.size())
+        return children_.front();
     else
         return 0;
 }
@@ -48,8 +48,8 @@ TreeNode<T>* TreeNode<T>::firstChild() const
 template <typename T>
 TreeNode<T>* TreeNode<T>::lastChild() const
 {
-    if (m_children.size())
-        return m_children.back();
+    if (children_.size())
+        return children_.back();
     else
         return 0;
 }
@@ -57,25 +57,25 @@ TreeNode<T>* TreeNode<T>::lastChild() const
 template <typename T>
 TreeNode<T>* TreeNode<T>::nextSibling() const
 {
-    return static_cast<TreeNode<T>*>(Node<T>::m_next);
+    return static_cast<TreeNode<T>*>(Node<T>::next_);
 }
 
 template <typename T>
 TreeNode<T>* TreeNode<T>::previousSibling() const
 {
-    return static_cast<TreeNode<T>*>(Node<T>::m_previous);
+    return static_cast<TreeNode<T>*>(Node<T>::previous_);
 }
 
 template <typename T>
 T TreeNode<T>::value() const
 {
-    return Node<T>::m_value;
+    return Node<T>::value_;
 }
 
 template <typename T>
 int TreeNode<T>::children() const
 {
-    return m_children.size();
+    return children_.size();
 }
 
 }; // namespace container

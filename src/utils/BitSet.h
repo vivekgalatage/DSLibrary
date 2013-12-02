@@ -20,11 +20,11 @@ public:
     bool any() const;
     bool none() const;
 
-    unsigned size() const { return m_size; }
+    unsigned size() const { return size_; }
 
 private:
-    unsigned m_size;
-    unsigned int* m_array;
+    unsigned size_;
+    unsigned int* array_;
 }; // BitSet
 
 }; // namespace utils

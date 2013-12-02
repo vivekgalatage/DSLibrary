@@ -23,10 +23,10 @@ public:
     Node* previous() const;
     Type type() const;
 protected:
-    T m_value;
-    Node* m_next;
-    Node* m_previous;
-    Type m_type;
+    T value_;
+    Node* next_;
+    Node* previous_;
+    Type type_;
 };
 
 }; // namespace conatainer

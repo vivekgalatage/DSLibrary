@@ -4,45 +4,45 @@ namespace ds {
 namespace utils {
 
 BitSet::BitSet(const int size, bool setAllBits)
-    : m_size(size)
+    : size_(size)
 {
-    unsigned arrayLength = (m_size / sizeof(int)) + ((m_size % sizeof(int)) ? 1 : 0);
-    m_array = new unsigned int[arrayLength];
+    unsigned arrayLength = (size_ / sizeof(int)) + ((size_ % sizeof(int)) ? 1 : 0);
+    array_ = new unsigned int[arrayLength];
     for (unsigned i = 0; i < arrayLength; ++i)
-        m_array[i] = (setAllBits ? ~0 : 0);
+        array_[i] = (setAllBits ? ~0 : 0);
 }
 
 BitSet::~BitSet()
 {
-    delete[] m_array;
+    delete[] array_;
 }
 
 bool BitSet::test(const int bitPosition) const
 {
     int bucket = bitPosition / sizeof(int);
     int localPosition = bitPosition % sizeof(int);
-    return (m_array[bucket] >> localPosition) & 1;
+    return (array_[bucket] >> localPosition) & 1;
 }
 
 void BitSet::set(const int bitPosition)
 {
     int bucket = bitPosition / sizeof(int);
     int localPosition = bitPosition % sizeof(int);
-    m_array[bucket] |= (1 << localPosition);
+    array_[bucket] |= (1 << localPosition);
 }
 
 void BitSet::reset(const int bitPosition)
 {
     int bucket = bitPosition / sizeof(int);
     int localPosition = bitPosition % sizeof(int);
-    m_array[bucket] &= ~(1 << localPosition);
+    array_[bucket] &= ~(1 << localPosition);
 }
 
 void BitSet::flip(const int bitPosition)
 {
     int bucket = bitPosition / sizeof(int);
     int localPosition = bitPosition % sizeof(int);
-    m_array[bucket] ^= (1 << localPosition);
+    array_[bucket] ^= (1 << localPosition);
 }
 
 bool BitSet::operator[](const int bitPosition) const
@@ -52,9 +52,9 @@ bool BitSet::operator[](const int bitPosition) const
 
 bool BitSet::all() const 
 {
-    unsigned arrayLength = (m_size / sizeof(int)) + ((m_size % sizeof(int)) ? 1 : 0);
+    unsigned arrayLength = (size_ / sizeof(int)) + ((size_ % sizeof(int)) ? 1 : 0);
     for (unsigned i = 0; i < arrayLength; ++i) {
-        if (static_cast<int>(m_array[i]) != ~0)
+        if (static_cast<int>(array_[i]) != ~0)
             return false;
     }
     return true;
@@ -62,9 +62,9 @@ bool BitSet::all() const
 
 bool BitSet::any() const 
 {
-    unsigned arrayLength = (m_size / sizeof(int)) + ((m_size % sizeof(int)) ? 1 : 0);
+    unsigned arrayLength = (size_ / sizeof(int)) + ((size_ % sizeof(int)) ? 1 : 0);
     for (unsigned i = 0; i < arrayLength; ++i) {
-        if (m_array[i] != 0)
+        if (array_[i] != 0)
             return true;
     }
     return false;
@@ -72,9 +72,9 @@ bool BitSet::any() const
 
 bool BitSet::none() const 
 {
-    unsigned arrayLength = (m_size / sizeof(int)) + ((m_size % sizeof(int)) ? 1 : 0);
+    unsigned arrayLength = (size_ / sizeof(int)) + ((size_ % sizeof(int)) ? 1 : 0);
     for (unsigned i = 0; i < arrayLength; ++i) {
-        if (m_array[i] != 0)
+        if (array_[i] != 0)
             return false;
     }
     return true;
@@ -82,9 +82,9 @@ bool BitSet::none() const
 
 void BitSet::flipAll()
 {
-    unsigned arrayLength = (m_size / sizeof(int)) + ((m_size % sizeof(int)) ? 1 : 0);
+    unsigned arrayLength = (size_ / sizeof(int)) + ((size_ % sizeof(int)) ? 1 : 0);
     for (unsigned i = 0; i < arrayLength; ++i)
-        m_array[i] ^= static_cast<unsigned>(~0);
+        array_[i] ^= static_cast<unsigned>(~0);
 }
 
 }; // namespace utils
