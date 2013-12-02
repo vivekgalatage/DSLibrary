@@ -8,7 +8,7 @@ Node<T>::Node()
 }
 
 template <typename T>
-Node<T>::Node(const Node<T>::Type& type)
+Node<T>::Node(const typename Node<T>::Type& type)
     : type_(type)
 {
 }
@@ -21,7 +21,7 @@ Node<T>::Node(const T& val)
 }
 
 template <typename T>
-Node<T>::Node(const T& val, const Node<T>::Type& type)
+Node<T>::Node(const T& val, const typename Node<T>::Type& type)
     : value_(val)
     , type_(type)
 {
