@@ -16,10 +16,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DSLibrary.gyp"/>
+    <ClCompile Include="tests\String_test.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
     <ClCompile Include="tests\BitSet_test.cpp">
       <Filter>tests</Filter>
     </ClCompile>
-    <ClCompile Include="tests\String_test.cpp">
+    <ClCompile Include="tests\Tree_test.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\TreeNode_test.cpp">
       <Filter>tests</Filter>
     </ClCompile>
     <ClCompile Include="third-party\googletest\src\gtest-all.cc">

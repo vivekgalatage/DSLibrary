@@ -60,8 +60,10 @@
     <None Include="DSLibrary.gyp"/>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="tests\BitSet_test.cpp"/>
     <ClCompile Include="tests\String_test.cpp"/>
+    <ClCompile Include="tests\BitSet_test.cpp"/>
+    <ClCompile Include="tests\Tree_test.cpp"/>
+    <ClCompile Include="tests\TreeNode_test.cpp"/>
     <ClCompile Include="third-party\googletest\src\gtest-all.cc"/>
     <ClCompile Include="third-party\googletest\src\gtest_main.cc"/>
   </ItemGroup>
